@@ -29,17 +29,30 @@
   background-position: center;
   float: left;
   position: relative;
+  background-size: 100%;
+  transition: 1s;
+  background-repeat: no-repeat;
+}
+
+.deviceBox:hover > .devicePhotoBox {
+  background-size: 120%;
 }
 
 .deviceContentBox {
   width: 50%;
   height: 100%;
-  background-color: rgb(50, 86, 205);
+  background-color: #4175fc;
   display: inline-block;
   font-size: 1rem;
   float: left;
   position: relative;
   color: white;
+  transition: 1s;
+}
+
+.deviceBox:hover > .deviceContentBox {
+  background-color: #345dc9;
+  transition: 1s;
 }
 
 .deviceContentBox .content {
@@ -50,6 +63,15 @@
   margin-top: 1rem;
 }
 
+.deviceContentBox h3 {
+  font-size: 1.1rem;
+  color: white;
+}
+
+.deviceContentBox p {
+  font-size: 0.8rem;
+}
+
 @media only screen and (max-width: 1025px) {
   .myContainer {
     margin: 2rem;
@@ -58,6 +80,7 @@
   .deviceBox {
     width: 100%;
     height: auto;
+    margin-top: 2rem;
   }
 
   .devicePhotoBox {
@@ -69,5 +92,9 @@
   .deviceContentBox {
     width: 100%;
     float: none;
+  }
+
+  .deviceBox:hover > .devicePhotoBox {
+    background-size: 100%;
   }
 }
