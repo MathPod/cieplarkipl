@@ -7,7 +7,6 @@
 .myContainer {
   max-width: 1140px;
   margin: 0 auto;
-
   font-size: 0;
 }
 
@@ -36,6 +35,65 @@
 
 .deviceBox:hover > .devicePhotoBox {
   background-size: 120%;
+}
+
+.titleBarLvl2Category {
+  width: 100%;
+  height: 20%;
+  background-color: rgba(52, 93, 201, 0.8);
+  color: white;
+  position: absolute;
+  bottom: 0;
+  transition: 1s;
+}
+
+.categoryLvl2deviceBox {
+  width: 25%;
+  background-color: #345dc9;
+  background-size: 100%;
+  transition: 1s;
+}
+
+@media only screen and (min-width: 1026px) {
+  .categoryLvl2deviceBox:hover > .devicePhotoBoxLvl2Category {
+    background-size: 115%;
+  }
+}
+
+.categoryLvl2deviceBox:hover > .titleBarLvl2Category {
+  background-color: rgba(52, 93, 201, 1);
+}
+
+.titleBarLvl2Category p {
+  font-size: 1rem;
+  text-align: center;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.titleCategoryLvl2Box {
+  position: absolute;
+  text-align: center;
+  width: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+}
+
+.devicePhotoBoxLvl2Category {
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  display: inline-block;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  background-size: 100%;
+  transition: 1s;
+  background-repeat: no-repeat;
 }
 
 .deviceContentBox {
@@ -79,8 +137,12 @@
 
   .deviceBox {
     width: 100%;
-    height: auto;
+    /* height: auto; */
     margin-top: 2rem;
+  }
+
+  .devicePhotoBoxLvl2Category {
+    background-size: contain;
   }
 
   .devicePhotoBox {
@@ -98,3 +160,5 @@
     background-size: 100%;
   }
 }
+
+/* Category LVL2 Template */
