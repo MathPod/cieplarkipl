@@ -18,6 +18,10 @@
   display: inline-block;
   position: relative;
 }
+.deviceBoxBig {
+  height: 570px;
+  background: transparent;
+}
 
 .devicePhotoBox {
   width: 50%;
@@ -45,6 +49,7 @@
   position: absolute;
   bottom: 0;
   transition: 1s;
+  padding: 0 1rem 0 1rem;
 }
 
 .categoryLvl2deviceBox {
@@ -52,6 +57,48 @@
   background-color: #345dc9;
   background-size: 100%;
   transition: 1s;
+}
+
+.productLvl3titleBox {
+  width: 50%;
+  background-color: #345dc9;
+  background-size: 100%;
+  transition: 1s;
+  float: right;
+  color: white;
+  font-size: 2rem;
+  height: 100%;
+  text-align: center;
+}
+
+.productLvl4titleBox {
+  height: 100%;
+  width: 100%;
+  /* background-color: #345dc9; */
+  background-color: rgba(52, 93, 201, 1);
+  float: right;
+  position: relative;
+  top: 0;
+  text-align: center;
+  padding: 0 3rem 0 3rem;
+}
+
+.contentBox {
+  font-size: 1rem;
+  margin: 2rem 0 2rem 0;
+}
+.contentBox p {
+  margin: 2rem 0 2rem 0;
+}
+
+.productLvl3titleBox h1,
+.productLvl4titleBox h1 {
+  font-size: 2rem;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  color: white;
+  font-size: 2rem;
 }
 
 @media only screen and (min-width: 1026px) {
@@ -94,6 +141,9 @@
   background-size: 100%;
   transition: 1s;
   background-repeat: no-repeat;
+}
+.devicePhotoBoxLvl3Category {
+  background-color: #f3f5f5;
 }
 
 .deviceContentBox {
@@ -161,4 +211,35 @@
   }
 }
 
+.detailsButton {
+  background: #4175fc;
+  color: white;
+  padding: 1rem;
+  border: none;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.buttonContainer {
+  text-align: center;
+  padding-top: 4rem;
+  padding-bottom: 8rem;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #4175fc;
+}
+
+.carousel {
+  position: absolute !important;
+  margin-top: 2rem;
+}
+
+.carousel-indicators li {
+  background-color: #4175fc;
+}
 /* Category LVL2 Template */
+
+/* PRODUCT TEMPLATE */

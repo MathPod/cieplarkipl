@@ -27,15 +27,17 @@ $devicesArray = array(
 ); 
 
 /* 
-    $device[0] // title_pl
-    $device[1] // title_en
-    $device[2] // title_es
-    $device[3] // img_category_pl
-    $device[4] // img_category_en
-    $device[5] // img_category_es
-    $device[6] // meta_pl
-    $device[7] // meta_en
-    $device[8] // meta_es
+    $devicesArray[0] // title_pl
+    $devicesArray[1] // title_en
+    $devicesArray[2] // title_es
+    $devicesArray[3] // img_category_pl
+    $devicesArray[4] // img_category_en
+    $devicesArray[5] // img_category_es
+    $devicesArray[6] // meta_pl
+    $devicesArray[7] // meta_en
+    $devicesArray[8] // category_url_pl
+    $devicesArray[10] // category_url_en
+    $devicesArray[11] // category_url_es
 
 */
 
@@ -47,15 +49,29 @@ foreach($devicesArray as $key => $device) {
 
     $row = mysqli_fetch_array($result);
     
+   
     $devicesArray[$key][3] = $row['img_category_pl'];
     $devicesArray[$key][4] = $row['img_category_en'];
     $devicesArray[$key][5] = $row['img_category_es'];
     $devicesArray[$key][6] = $row['meta_pl'];
     $devicesArray[$key][7] = $row['meta_en'];
     $devicesArray[$key][8] = $row['meta_es'];
+    
+
+    $titlePl = $devicesArray[$key][0];
+    
+
+    $query2 = "SELECT category_url_pl, category_url_en, category_url_es FROM all_products_list WHERE category_pl = '$titlePl'";
+    $result2 = mysqli_query($connect,$query2) or die(mysqli_error($connect));
+    $row2 = mysqli_fetch_array($result2);
 
     
+    $devicesArray[$key][9] = $row2['category_url_pl'];
+    $devicesArray[$key][10] = $row2['category_url_en'];
+    $devicesArray[$key][11] = $row2['category_url_es'];
 }
+
+
 ?>
 
 
@@ -75,11 +91,11 @@ foreach($devicesArray as $key => $device) {
 
     <?php 
         foreach($devicesArray as $device) { ?>
-            <a href="/<?php echo $device[3]; ?>">
+            <a href="/produkty/<?php echo($device[9]); ?>">
             <div class="deviceBox">
             <div
                 class="devicePhotoBox"
-                style="background-image: url(./img/device_category_img/<?php echo $device[3]; ?>.webp)"
+                style="background-image: url(/img/device_category_img/<?php echo $device[3]; ?>.webp)"
             ></div>
             <div class="deviceContentBox">
                 <div class="content">
@@ -107,7 +123,3 @@ foreach($devicesArray as $key => $device) {
     </div>
   </body>
 </html>
-
-
-
-
